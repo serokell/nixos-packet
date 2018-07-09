@@ -7,7 +7,7 @@ before_script:
 pages:
   script:
   - nix-build all-at-once.nix
-  - cp -r result public
+  - cp -Lr result public
   artifacts:
     paths:
     - public
