@@ -1,7 +1,0 @@
-{
-  boot = {
-    kernelParams = [
-      "initrd=initrd"
-    ];
-  };
-}

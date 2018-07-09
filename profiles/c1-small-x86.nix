@@ -1,4 +1,5 @@
 {
+  hardware.enableAllFirmware = true;
   nixpkgs.config.allowUnfree = true;
 
   boot.initrd.availableKernelModules = [
@@ -6,10 +7,6 @@
   ];
 
   boot.kernelModules = [ "kvm-intel" ];
-  boot.kernelParams =  [ "console=ttyS1,115200n8" ];
-  boot.extraModulePackages = [ ];
-
-  hardware.enableAllFirmware = true;
 
   nix.maxJobs = 8;
 }
