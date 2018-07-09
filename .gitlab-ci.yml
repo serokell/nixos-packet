@@ -1,0 +1,15 @@
+image: nixos/nix
+
+before_script:
+  - nix-channel --add https://gitlab.com/serokell/nixpkgs/-/archive/master/nixpkgs-master.tar.gz nixpkgs 
+  - nix-channel --update
+
+pages:
+  script:
+  - nix-build all-at-once.nix
+  - cp -r result public
+  artifacts:
+    paths:
+    - public
+  only:
+  - master
