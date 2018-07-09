@@ -87,12 +87,12 @@ in
     name = "t1.small.x86";
 
     commonImports = [
-      ./profiles
+      ./profiles/default.nix
       ./profiles/t1-small-x86.nix
     ];
 
     runtimeImports = [
-      ./profiles/post-install
+      ./profiles/post-install/default.nix
       ./profiles/post-install/t1-small-x86.nix
     ];
 
