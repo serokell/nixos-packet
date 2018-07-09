@@ -4,12 +4,9 @@ before_script:
   - nix-channel --add https://gitlab.com/serokell/nixpkgs/-/archive/master/nixpkgs-master.tar.gz nixpkgs 
   - nix-channel --update
 
-pages:
+ipxe:
   script:
   - nix-build all-at-once.nix
-  - cp -Lr result public
-  artifacts:
-    paths:
-    - public
+  - aws s3 cp --endpoint-url=https://s3.wasabisys.com --recursive result s3://nixos-packet
   only:
   - master
