@@ -12,8 +12,8 @@
   };
 
   fileSystems."/" = {
-    device = "root";
     fsType = "btrfs";
+    label = "root";
   };
 
   hardware.cpu.intel.updateMicrocode = lib.mkDefault true;
