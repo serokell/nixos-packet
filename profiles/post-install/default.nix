@@ -2,8 +2,8 @@
 
 {
   boot.loader.grub = {
-    enable = true;
-    version = 2;
+    enable = lib.mkDefault true;
+    version = lib.mkDefault 2;
     extraConfig = ''
       serial --unit=0 --speed=115200 --word=8 --parity=no --stop=1
       terminal_output serial console
