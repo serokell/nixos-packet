@@ -26,10 +26,6 @@ generate_standard_config() {
 
     mkdir -p /mnt/etc/nixos/packet
     packet-config-gen > /mnt/etc/nixos/packet/metadata.nix
-
-    # for ZFS
-    hostId=$(printf "00000000%x" $(cksum /etc/machine-id | cut -d' ' -f1) | tail -c8)
-    echo '{ networking.hostId = "'$hostId'"; }' > /mnt/etc/nixos/packet/host-id.nix
 }
 
 finalize_config() {
