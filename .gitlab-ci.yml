@@ -6,7 +6,7 @@ before_script:
 
 ipxe:
   script:
-  - nix-build all-at-once.nix
+  - nix-build release.nix
   - nix-shell -p awscli --run "aws s3 cp --endpoint-url=$AWS_S3_ENDPOINT_URL --recursive result $AWS_S3_BUCKET_URI"
   only:
   - master
