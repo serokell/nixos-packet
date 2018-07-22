@@ -65,7 +65,7 @@ in {
       '';
     };
 
-    systemd.services.doinstall = {
+    systemd.services.nixos-packet-install = {
       wantedBy = [ "multi-user.target" ];
       after = [ "multi-user.target" ];
       script = ''
